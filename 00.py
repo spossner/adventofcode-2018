@@ -11,8 +11,7 @@ import bisect
 import networkx as nx
 import pygame as pg
 import numpy as np
-
-from aoc import Point, NORTH, rot_ccw, rot_cw, translate
+from aoc import Point, Rect, NORTH, rot_ccw, rot_cw, translate
 
 
 class Solution:
