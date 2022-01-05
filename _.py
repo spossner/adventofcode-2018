@@ -44,9 +44,13 @@ if __name__ == '__main__':
     DEV = True
     PART2 = False
     STRIP = True
-    SPLIT_LINES = True
+    SPLIT_LINES = False
     SPLIT_CHAR = None
+    DATA = None
 
-    with open(f'{script}{"-dev" if DEV else ""}.txt') as f:
-        s = Solution(f.read(), PART2, DEV, STRIP, SPLIT_LINES, SPLIT_CHAR)
-        print(s.first_part() if not PART2 else s.second_part())
+    if not DATA:
+        with open(f'{script}{"-dev" if DEV else ""}.txt') as f:
+            DATA = f.read()
+
+    s = Solution(DATA, PART2, DEV, STRIP, SPLIT_LINES, SPLIT_CHAR)
+    print(s.first_part() if not PART2 else s.second_part())
