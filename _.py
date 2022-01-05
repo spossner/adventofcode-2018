@@ -15,7 +15,7 @@ from aoc import Point, Rect, NORTH, rot_ccw, rot_cw, translate
 
 
 class Solution:
-    def __init__(self, data, modified=False, do_strip=False, do_splitlines=True, split_char=None):
+    def __init__(self, data, modified=False, dev=False, do_strip=False, do_splitlines=True, split_char=None):
         if data and do_strip:
             data = data.strip()
         if data and do_splitlines:
@@ -27,9 +27,13 @@ class Solution:
                 data = [row.split(split_char) for row in data] if do_splitlines else data.split(split_char)
         self.data = data
         self.modified = modified
+        self.dev = dev
 
-    def solve(self):
+    def first_part(self):
         pass
+
+    def second_part(self):
+        return self.first_part()
 
 
 if __name__ == '__main__':
@@ -44,5 +48,5 @@ if __name__ == '__main__':
     SPLIT_CHAR = None
 
     with open(f'{script}{"-dev" if DEV else ""}.txt') as f:
-        s = Solution(f.read(), PART2, STRIP, SPLIT_LINES, SPLIT_CHAR)
-        print(s.solve())
+        s = Solution(f.read(), PART2, DEV, STRIP, SPLIT_LINES, SPLIT_CHAR)
+        print(s.first_part() if not PART2 else s.second_part())
