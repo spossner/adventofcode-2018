@@ -44,7 +44,7 @@ if __name__ == '__main__':
     DEV = True
     PART2 = False
     STRIP = True
-    SPLIT_LINES = False
+    SPLIT_LINES = True
     SPLIT_CHAR = None
     DATA = None
 
